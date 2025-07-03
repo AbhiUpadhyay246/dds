@@ -1,0 +1,43 @@
+#include <stdio.h>
+#define size 5
+int stack[size];
+int top = -1;
+void push(int num){
+    top += 1;
+    if(top<size){
+        stack[top]= num;
+        printf("insertion successful !\n");
+    }else{
+        printf("stack is full\n");
+    }
+}
+void pop(){
+    if(top>=0){
+        printf("Poped element = %d\n",stack[top]);
+        top--;
+    }
+    else{
+        printf("Poped from empty stack\n");
+    }
+}
+void peak(){
+    if(top>=0){
+        printf("Peak = %d\n",stack[top]);
+    }
+    else{
+        printf("Stack is empty\n");
+    }
+}
+int main() {
+    push(1);
+    push(2);
+    push(3);
+    push(4);
+    push(5);
+    // push(4);
+    pop();
+    pop();
+    pop();
+    pop();
+    return 0;
+}
